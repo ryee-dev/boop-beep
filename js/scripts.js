@@ -26,7 +26,7 @@ var checkBoops = function(numArray) {
   return boopCheck;
 };
 
-var isDave = function(numArray) {
+var checkDave = function(numArray) {
   var daveCheck = false;
   for(var i = 0; i < numArray.length; i++) {
     if(numArray[i] === "3") {
@@ -45,17 +45,16 @@ $(document).ready(function() {
 
     var isBeep = checkBeeps(numArray);
     var isBoop = checkBoops(numArray);
+    var isDave = checkDave(numArray);
 
     console.log(numArray);
-    console.log(checkBeeps(numArray));
 
-
-    if(isBoop === true) {
+    if(isDave === true) {
+      $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
+    } else if (isBoop === true) {
       $("#beepBoopResult").text("Boop!");
     } else if(isBeep === true) {
       $("#beepBoopResult").text("Beep!");
-    } else if(isDave === true) {
-      $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
     }
 
   });
