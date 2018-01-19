@@ -11,20 +11,21 @@
   </head>
   <body>
     <div id="background">
-      <div class="container">
-        <h1>Beep-Boop</h1>
+          <div class="container" id="centerPage">
+            <img src="img/robot.png" alt="roboop" id="robo">
+          <form id="boopForm">
+            <div id="results">
+            <h3><label for="num">Enter a Number for Beepy-McBoop-Face to Compute:</h3></label>
+            <input type="number" id="num">
+            </div>
+            <button type="submit" class="btn btn-default" id="button-text">PRESS</button>
+          </form>
 
-        <form id="boopForm">
-          <label for="num"><h3>Enter a number to communicate with Beepy-McBoop-Face!</h3> </label>
-          <input class="form-control" type="number" id="num">
-          <button type="submit" class="btn btn-default" id="button-text">PRESS</button>
-        </form>
-        <div id="SURPRISE">
-          <h2><span id="beepBoopResult"></span></h2>
-          <img src="img/robot.png" alt="roboop">
+          <div id="SURPRISE">
+            <h2><span id="beepBoopResult"></span></h2>
+          </div>
         </div>
-        </div>
-      </div>
+    </div>
   </body>
 
 </html>

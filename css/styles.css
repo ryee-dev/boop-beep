@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/circuits.png");
+  background-image: url("../img/circuit_o.25.png");
   background-repeat: repeat;
   font-family: 'VT323', monospace;
   text-align: center;
@@ -7,11 +7,15 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 75px;
+  font-size: 100px;
 }
 
 h2 {
   font-size: 50px;
+}
+
+h3 {
+  font-size: 35px;
 }
 
 .form-control {
@@ -20,9 +24,26 @@ h2 {
   margin: auto;
 }
 
+#beepBoopResult {
+  font-size: 100px;
+}
+
+#num {
+  height: 80px;
+  width: 800px;
+  font-size: 60px;
+}
+
+#clear {
+  height: 80px;
+  width: 150px;
+  font-size: 30px;
+}
+
 #button-text {
-  margin-top: 20px;
-  width: 400px;
+  margin-top: 10px;
+  width: 800px;
+  height: 90px;
   font-size: 40px;
 }
 
@@ -35,7 +56,15 @@ h2 {
   width: 250px;
 }
 
-#go-back {
-  height: 500px;
-  width: 500px;
+#centerPage {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#robo {
+  height: 675px;
+  width: 675px;
 }

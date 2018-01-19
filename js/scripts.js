@@ -6,6 +6,15 @@ Specifications:
 4. if the array contains a "3", to return "I'm sorry, Dave. I'm afraid I can't do that."
 
 */
+var checkNums = function(numArray) {
+  var numCheck = false;
+  for(var i = 0; i < numArray.length; i++) {
+    if(numArray[i] !== "0" && numArray[i] !== "1" && numArray[i] !== "3") {
+      numCheck = true;
+    }
+  }
+  return numCheck;
+};
 
 var checkBeeps = function(numArray) {
   var beepCheck = false;
@@ -44,24 +53,34 @@ $(document).ready(function() {
     var numInput = $("#num").val();
     var numArray = Array.from(numInput);
 
+    var notOne = checkNums(numArray);
     var isBeep = checkBeeps(numArray);
     var isBoop = checkBoops(numArray);
     var isDave = checkDave(numArray);
 
     console.log(numArray);
 
-    if(isDave === true) {
+      if(isDave === true) {
       $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
-      $("#boopForm").toggle();
       $("#SURPRISE").fadeIn();
+      $("#boopForm")[0].reset();
+
     } else if (isBoop === true) {
       $("#beepBoopResult").text("Boop!");
-      $("#boopForm").toggle();
       $("#SURPRISE").fadeIn();
+      $("#boopForm")[0].reset();
+
     } else if(isBeep === true) {
       $("#beepBoopResult").text("Beep!");
-      $("#boopForm").toggle();
       $("#SURPRISE").fadeIn();
+      $("#boopForm")[0].reset();
+
+    } else if (notOne === true) {
+      $("#beepBoopResult").text(numInput);
+      $("#SURPRISE").fadeIn();
+      $("#boopForm")[0].reset();
+    } else {
+      $("#beepBoopResult").text('');
     }
 
   });
