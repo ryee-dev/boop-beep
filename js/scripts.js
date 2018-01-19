@@ -62,25 +62,25 @@ $(document).ready(function() {
 
       if(isDave === true) {
       $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
-      $("#SURPRISE").fadeIn();
+      $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
 
     } else if (isBoop === true) {
       $("#beepBoopResult").text("Boop!");
-      $("#SURPRISE").fadeIn();
+      $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
 
     } else if(isBeep === true) {
       $("#beepBoopResult").text("Beep!");
-      $("#SURPRISE").fadeIn();
+      $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
 
     } else if (notOne === true) {
       $("#beepBoopResult").text(numInput);
-      $("#SURPRISE").fadeIn();
+      $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
     } else {
-      $("#beepBoopResult").text('');
+      $("#beepBoopResult").text("Oops, you forgot to enter a number.");
     }
 
   });
