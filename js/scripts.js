@@ -6,6 +6,7 @@ Specifications:
 4. if the array contains a "3", to return "I'm sorry, Dave. I'm afraid I can't do that."
 
 */
+
 var checkBeeps = function(numArray) {
   var beepCheck = false;
   for(var i = 0; i < numArray.length; i++) {
@@ -51,10 +52,16 @@ $(document).ready(function() {
 
     if(isDave === true) {
       $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
+      $("#boopForm").toggle();
+      $("#SURPRISE").fadeIn();
     } else if (isBoop === true) {
       $("#beepBoopResult").text("Boop!");
+      $("#boopForm").toggle();
+      $("#SURPRISE").fadeIn();
     } else if(isBeep === true) {
       $("#beepBoopResult").text("Beep!");
+      $("#boopForm").toggle();
+      $("#SURPRISE").fadeIn();
     }
 
   });

@@ -1,0 +1,39 @@
+body {
+  font-family: 'VT323', monospace;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 75px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+.form-control {
+  width: 500px;
+  display: block;
+  margin: auto;
+}
+
+#button-text {
+  margin-top: 20px;
+  width: 400px;
+  font-size: 40px;
+}
+
+#SURPRISE {
+  display: none;
+}
+
+#submit {
+  height: 250px;
+  width: 250px;
+}
+
+#go-back {
+  height: 500px;
+  width: 500px;
+}
