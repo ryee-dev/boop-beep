@@ -11,7 +11,6 @@ Upon opening the webpage, you will be greeted by a kind robot by the name of Bee
 Here are the conditions in which Beepy operates:
 - Beepy says, "Beep!" --> if the number contains a "0"
 - Beepy says, "Boop!" --> if the number contians a "1"
-- Beepy says, "I'm sorry, Dave. I'm afraid I can't do that" --> if the number contains "3"
 - Beepy says, "I'm sorry, (User's Name). I'm afraid I can't do that" --> if the number is divisible by "3"
 - Beepy says, "Oops, you forgot to enter a number." --> if the number form is empty.
 - Beepy says, "Oops, you forgot to enter your name." --> if the name form is empty.
