@@ -48,7 +48,12 @@ var checkBoops = function(numArray) {
 
 var checkMod = function(numInput) {
   var modCheck = false;
+<<<<<<< HEAD
     if(numInput % 3 === 0) {
+=======
+  for(var i = 0; i < numArray.length; i++) {
+    if(numArray[i] % 3 === "0") {
+>>>>>>> c56736947a89afb46c13e18a87f4d97ebc4bfb3e
       modCheck = true;
     }
   return modCheck;
@@ -84,10 +89,17 @@ $(document).ready(function() {
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
 
+<<<<<<< HEAD
     // } else if(isDave === true) {
     //   $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
     //   $("#SURPRISE").fadeIn(800);
     //   $("#boopForm")[0].reset();
+=======
+    } else if(isDave === true) {
+      $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
+      $("#SURPRISE").fadeIn(800);
+      $("#boopForm")[0].reset();
+>>>>>>> c56736947a89afb46c13e18a87f4d97ebc4bfb3e
 
     } else if (isBoop === true) {
       $("#beepBoopResult").text("Boop!");
