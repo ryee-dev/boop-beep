@@ -49,7 +49,7 @@ var checkDave = function(numArray) {
 var checkMod = function(numArray) {
   var modCheck = false;
   for(var i = 0; i < numArray.length; i++) {
-    if(numArray[i] % "3" === 0) {
+    if(numArray[i] % 3 === "0") {
       modCheck = true;
     }
   }
@@ -78,10 +78,13 @@ $(document).ready(function() {
       $("#beepBoopResult").text("Oops, you forgot to enter your name.");
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
-    } else if(divisible === true) {
+    }
+
+    if(divisible === true) {
       $("#beepBoopResult").text("I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
+
     } else if(isDave === true) {
       $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
       $("#SURPRISE").fadeIn(800);
@@ -101,7 +104,6 @@ $(document).ready(function() {
       $("#beepBoopResult").text(numInput);
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
-
     } else {
       $("#beepBoopResult").text("Oops, you forgot to enter a number.");
     }
