@@ -49,8 +49,6 @@ var checkBoops = function(numArray) {
 var checkMod = function(numInput) {
   var modCheck = false;
     if(numInput % 3 === 0) {
-  for(var i = 0; i < numArray.length; i++) {
-    if(numArray[i] % 3 === "0") {
       modCheck = true;
     }
   return modCheck;
@@ -91,11 +89,6 @@ $(document).ready(function() {
     //   $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
     //   $("#SURPRISE").fadeIn(800);
     //   $("#boopForm")[0].reset();
-
-    } else if(isDave === true) {
-      $("#beepBoopResult").text("I'm sorry, Dave. I'm afraid I can't do that.");
-      $("#SURPRISE").fadeIn(800);
-      $("#boopForm")[0].reset();
 
 
     } else if (isBoop === true) {
