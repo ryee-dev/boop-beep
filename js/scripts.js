@@ -6,14 +6,22 @@ Specifications:
 4. if the array contains a "3", to return "I'm sorry, Dave. I'm afraid I can't do that."
 
 */
-var checkNums = function(numArray) {
-  var numCheck = false;
+var checkName = function(nameInput) {
+  var nameCheck = false;
+    if(nameInput === "") {
+      nameCheck = true;
+    }
+  return nameCheck;
+};
+
+var otherNums = function(numArray) {
+  var numberAfter = "";
   for(var i = 0; i < numArray.length; i++) {
-    if(numArray[i] !== "0" && numArray[i] !== "1" && numArray[i] !== "3") {
-      numCheck = true;
+    if(numArray[i] === "2" || numArray[i] === "4" || numArray[i] === "5" || numArray[i] === "7" || numArray[i] === "8") {
+    numberAfter = numArray[i];
     }
   }
-  return numCheck;
+  return numberAfter;
 };
 
 var checkBeeps = function(numArray) {
@@ -29,7 +37,7 @@ var checkBeeps = function(numArray) {
 var checkBoops = function(numArray) {
   var boopCheck = false;
   for(var i = 0; i < numArray.length; i++) {
-    if(numArray[i] === "1") {
+    if(numArray[i] === "1" || numArray[i] === "1" && numArray[i+1] === "0") {
       boopCheck = true;
     }
   }
@@ -48,13 +56,11 @@ var checkBoops = function(numArray) {
 
 var checkMod = function(numInput) {
   var modCheck = false;
-    if(numInput % 3 === 0) {
+    if(parseInt(numInput) % 3 === 0) {
       modCheck = true;
     }
   return modCheck;
 };
-
-
 
 $(document).ready(function() {
   $("form#boopForm").submit(function(event){
@@ -63,26 +69,52 @@ $(document).ready(function() {
     var nameInput = $("#name").val();
     var numInput = $("#num").val();
     var numArray = Array.from(numInput);
+    var nextNum = otherNums(numArray);
+    var noName = checkName(nameInput);
 
-    var notOne = checkNums(numArray);
     var isBeep = checkBeeps(numArray);
     var isBoop = checkBoops(numArray);
     // var isDave = checkDave(numArray);
     var divisible = checkMod(numInput);
 
     console.log(numArray);
-    console.log(divisible);
 
-    if(nameInput === '') {
+    var toOutput = function() {
+      var outputArray = [];
+      for(var i = 0; i < numArray.length; i++) {
+        if (isBoop === true) {
+          outputArray.push(" Boop! ");
+        } else if (isBeep === true) {
+          outputArray.push(" Beep! ");
+        } else {
+          outputArray.push(nextNum);
+        }
+      }
+      return outputArray;
+    }
+
+    if(noName === true) {
       $("#beepBoopResult").text("Oops, you forgot to enter your name.");
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
     }
 
-    if(divisible === true) {
+    if (divisible === true) {
       $("#beepBoopResult").text("I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
+    } else {
+      $("#beepBoopResult").text(toOutput());
+      $("#SURPRISE").fadeIn(800);
+      $("#boopForm")[0].reset();
+      console.log(toOutput());
+    }
+
+
+    // if(divisible === true) {
+    //   $("#beepBoopResult").text("I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
+    //   $("#SURPRISE").fadeIn(800);
+    //   $("#boopForm")[0].reset();
 
 
     // } else if(isDave === true) {
@@ -91,24 +123,23 @@ $(document).ready(function() {
     //   $("#boopForm")[0].reset();
 
 
-    } else if (isBoop === true) {
-      $("#beepBoopResult").text("Boop!");
-      $("#SURPRISE").fadeIn(800);
-      $("#boopForm")[0].reset();
-
-    } else if(isBeep === true) {
-      $("#beepBoopResult").text("Beep!");
-      $("#SURPRISE").fadeIn(800);
-      $("#boopForm")[0].reset();
-
-    } else if (notOne === true) {
-      $("#beepBoopResult").text(numInput);
-      $("#SURPRISE").fadeIn(800);
-      $("#boopForm")[0].reset();
-    } else {
-      $("#beepBoopResult").text("Oops, you forgot to enter a number.");
-    }
+    // } else if (isBoop === true) {
+    //   $("#beepBoopResult").push("Boop!");
+    //   $("#SURPRISE").fadeIn(800);
+    //   $("#boopForm")[0].reset();
+    //
+    // } else if(isBeep === true) {
+    //   $("#beepBoopResult").text("Beep!");
+    //   $("#SURPRISE").fadeIn(800);
+    //   $("#boopForm")[0].reset();
+    //
+    // } else if (notOne === true) {
+    //   $("#beepBoopResult").text(numInput);
+    //   $("#SURPRISE").fadeIn(800);
+    //   $("#boopForm")[0].reset();
+    // } else {
+    //   $("#beepBoopResult").text("Oops, you forgot to enter a number.");
+    // }
 
   });
-
 });

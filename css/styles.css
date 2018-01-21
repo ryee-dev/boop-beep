@@ -33,7 +33,7 @@ h4 {
 }
 
 #num {
-  height: 80px;
+  height: 50px;
   width: 800px;
   font-size: 60px;
 }
@@ -47,7 +47,7 @@ h4 {
 #button-text {
   margin-top: 10px;
   width: 800px;
-  height: 90px;
+  height: 65px;
   font-size: 40px;
 }
 
@@ -69,6 +69,6 @@ h4 {
 }
 
 #robo {
-  height: 675px;
-  width: 675px;
+  height: 500px;
+  width: 500px;
 }
