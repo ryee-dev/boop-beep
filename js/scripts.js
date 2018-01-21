@@ -6,13 +6,13 @@ Specifications:
 4. if the array contains a "3", to return "I'm sorry, Dave. I'm afraid I can't do that."
 
 */
-var checkName = function(nameInput) {
-  var nameCheck = false;
-    if(nameInput === "") {
-      nameCheck = true;
-    }
-  return nameCheck;
-};
+// var checkName = function(nameInput) {
+//   var nameCheck = false;
+//     if(nameInput === "") {
+//       nameCheck = true;
+//     }
+//   return nameCheck;
+// };
 
 var otherNums = function(numArray) {
   var numberAfter = "";
@@ -64,13 +64,12 @@ var checkMod = function(numInput) {
 
 $(document).ready(function() {
   $("form#boopForm").submit(function(event){
-    event.preventDefault();
 
     var nameInput = $("#name").val();
     var numInput = $("#num").val();
     var numArray = Array.from(numInput);
     var nextNum = otherNums(numArray);
-    var noName = checkName(nameInput);
+    // var noName = checkName(nameInput);
 
     // var isBeep = checkBeeps(numArray);
     // var isBoop = checkBoops(numArray);
@@ -93,13 +92,11 @@ $(document).ready(function() {
       return outputArray;
     }
 
-    if(noName === true) {
+    if (divisible === true && nameInput === "") {
       $("#beepBoopResult").text("Oops, you forgot to enter your name.");
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
-    }
-
-    if (divisible === true) {
+    } else if (divisible === true && nameInput !== "") {
       $("#beepBoopResult").text("I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
@@ -110,6 +107,7 @@ $(document).ready(function() {
       console.log(toOutput());
     }
 
+    event.preventDefault();
 
     // if(divisible === true) {
     //   $("#beepBoopResult").text("I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
