@@ -7,6 +7,16 @@ Specifications:
 
 */
 
+// var boopCheck = function(numArray) {
+//   var checkBoop = false;
+//   for(var i = 0; i < numArray.length; i++) {
+//     if(numArray[i] === "1" && numArray[i+1] === "0") {
+//       checkBoop = true;
+//     }
+//   }
+//   return checkBoop;
+// };
+
 var checkMod = function(numInput) {
   var modCheck = false;
     if(parseInt(numInput) % 3 === 0) {
@@ -21,19 +31,25 @@ $(document).ready(function() {
     var nameInput = $("#name").val();
     var numInput = $("#num").val();
     var numArray = Array.from(numInput);
+    // var isBoop = boopCheck(numArray);
     var divisible = checkMod(numInput);
 
     var toOutput = function() {
       var outputArray = [];
       for(var i = 0; i < numArray.length; i++) {
-        if (numArray[i] === "1") {
+        if (numArray[i] === "1" && numArray[i+1] === "0") {
+          outputArray.push("Boop!");
+        } else if (numArray[i] === "0" && numArray[i-1] === "1") {
+          outputArray.push();
+        } else if (numArray[i] === "1") {
           outputArray.push("Boop!");
         } else if (numArray[i] === "0") {
           outputArray.push("Beep!");
         } else {
           outputArray.push(numArray[i]);
         }
-      }
+
+    }
       return outputArray;
     }
 
