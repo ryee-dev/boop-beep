@@ -25,10 +25,10 @@ var otherNums = function(numArray) {
 };
 
 var checkBeeps = function(numArray) {
-  var beepCheck = false;
+  var beepCheck = "";
   for(var i = 0; i < numArray.length; i++) {
     if(numArray[i] === "0") {
-      beepCheck = true;
+      beepCheck = " Beep! ";
     }
   }
   return beepCheck;
@@ -72,8 +72,8 @@ $(document).ready(function() {
     var nextNum = otherNums(numArray);
     var noName = checkName(nameInput);
 
-    var isBeep = checkBeeps(numArray);
-    var isBoop = checkBoops(numArray);
+    // var isBeep = checkBeeps(numArray);
+    // var isBoop = checkBoops(numArray);
     // var isDave = checkDave(numArray);
     var divisible = checkMod(numInput);
 
@@ -82,12 +82,12 @@ $(document).ready(function() {
     var toOutput = function() {
       var outputArray = [];
       for(var i = 0; i < numArray.length; i++) {
-        if (isBoop === true) {
-          outputArray.push(" Boop! ");
-        } else if (isBeep === true) {
-          outputArray.push(" Beep! ");
+        if (numArray[i] === "1") {
+          outputArray.push("Boop!");
+        } else if (numArray[i] === "0") {
+          outputArray.push("Beep!");
         } else {
-          outputArray.push(nextNum);
+          outputArray.push(numArray[i]);
         }
       }
       return outputArray;
@@ -104,7 +104,7 @@ $(document).ready(function() {
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
     } else {
-      $("#beepBoopResult").text(toOutput());
+      $("#beepBoopResult").text(toOutput().join("-"));
       $("#SURPRISE").fadeIn(800);
       $("#boopForm")[0].reset();
       console.log(toOutput());
